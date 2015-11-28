@@ -1,0 +1,66 @@
+C:\Users\shurid\Desktop\Medical store project\Medical store\bin\Debug\Medical store.exe.config
+C:\Users\shurid\Desktop\Medical store project\Medical store\bin\Debug\Medical store.exe
+C:\Users\shurid\Desktop\Medical store project\Medical store\bin\Debug\Medical store.pdb
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.Calander.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.ContactUs.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.Customermaster.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.ItemMaster.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.itemStock.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.Login.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.Info.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.loginEditcs.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.Mdi_parent1.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.Properties.Resources.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.PurchaseReg.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.PurechaseBill.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.SaleBill.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.salesreg.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical_store.SupplierMaster.resources
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical store.csproj.GenerateResource.Cache
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical store.exe
+C:\Users\shurid\Desktop\Medical store project\Medical store\obj\Debug\Medical store.pdb
+F:\Medical store project\Medical store\bin\Debug\Medical store.exe.config
+F:\Medical store project\Medical store\obj\Debug\Medical store.exe
+F:\Medical store project\Medical store\obj\Debug\Medical store.pdb
+F:\Medical store project\Medical store\bin\Debug\Medical store.exe
+F:\Medical store project\Medical store\bin\Debug\Medical store.pdb
+F:\Medical store project\Medical store\obj\Debug\ResolveAssemblyReference.cache
+F:\Medical store project\Medical store\obj\Debug\Medical_store.Calander.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.ContactUs.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.Customermaster.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.ItemMaster.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.itemStock.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.Login.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.Info.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.loginEditcs.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.Mdi_parent1.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.Properties.Resources.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.PurchaseReg.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.PurechaseBill.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.SaleBill.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.salesreg.resources
+F:\Medical store project\Medical store\obj\Debug\Medical_store.SupplierMaster.resources
+F:\Medical store project\Medical store\obj\Debug\Medical store.csproj.GenerateResource.Cache
+G:\Medical store project\Medical store\bin\Debug\Medical store.exe.config
+G:\Medical store project\Medical store\obj\Debug\Medical store.exe
+G:\Medical store project\Medical store\obj\Debug\Medical store.pdb
+G:\Medical store project\Medical store\bin\Debug\Medical store.exe
+G:\Medical store project\Medical store\bin\Debug\Medical store.pdb
+G:\Medical store project\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache
+G:\Medical store project\Medical store\obj\Debug\Medical_store.Calander.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.ContactUs.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.Customermaster.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.ItemMaster.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.itemStock.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.Login.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.Info.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.loginEditcs.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.Mdi_parent1.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.Properties.Resources.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.PurchaseReg.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.PurechaseBill.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.SaleBill.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.salesreg.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.SupplierMaster.resources
+G:\Medical store project\Medical store\obj\Debug\Medical store.csproj.GenerateResource.Cache
