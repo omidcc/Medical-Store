@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,6 +13,9 @@ namespace Medical_store
 {
     public partial class Login : Form
     {
+string ConnectionString =
+                ConfigurationManager.ConnectionStrings["MedicalConnectionString"].ConnectionString;
+       
         public Login()
         {
             InitializeComponent();
@@ -48,10 +52,8 @@ namespace Medical_store
             try
             {
                 //Define object of SqlConnection and paasing of ConnectioString copied from database property
-                SqlConnection conn = new SqlConnection();
-                //conn.ConnectionString = @"Data Source=SAGAR-C2F6419CA;Initial Catalog=info;Integrated Security=True";
-                conn.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=timesheet;Integrated Security=True";
-                //Connection with Database starts
+                SqlConnection conn = new SqlConnection(ConnectionString );
+               
                 conn.Open();
 
                 //Create object of SqlAdapter and pass the query and object of ConnectionString

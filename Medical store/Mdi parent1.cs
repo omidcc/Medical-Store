@@ -207,6 +207,13 @@ namespace Medical_store
 
         private void companyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Company child = new Company();
+            child.Show();
+        }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
 
         }
     }

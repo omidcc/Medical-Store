@@ -22,47 +22,55 @@ namespace Medical_store
 
         private void SaleBill_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'medicalDataSet._Item_master' table. You can move, or remove it, as needed.
-           // this.item_masterTableAdapter.Fill(this.medicalDataSet._Item_master);
-            // TODO: This line of code loads data into the 'medicalDataSet3._Customer_Master' table. You can move, or remove it, as needed.
-            //this.customer_MasterTableAdapter.Fill(this.medicalDataSet3._Customer_Master);
-            // TODO: This line of code loads data into the 'medicalDataSet1.Stock' table. You can move, or remove it, as needed.
-            //this.stockTableAdapter.Fill(this.medicalDataSet1.Stock);
-            // TODO: This line of code loads data into the 'medicalDataSet4._Sales_Final' table. You can move, or remove it, as needed.
-            //this.sales_FinalTableAdapter.Fill(this.medicalDataSet4._Sales_Final);
-            // TODO: This line of code loads data into the 'medicalDataSet4.Sales' table. You can move, or remove it, as needed.
-           // this.salesTableAdapter.Fill(this.medicalDataSet4.Sales);
-
-            //dataGridView2.Hide();
-            comboBox1.Text = "";
-            textBox2.Text = "";
-            comboBox2.Text = "";
-            comboBox3.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
-            textBox11.Text = "";
-            textBox7.Text = "";
-            textBox8.Text = "";
-            textBox9.Text = "";
+            try
+            {
 
 
+                // TODO: This line of code loads data into the 'medicalDataSet._Item_master' table. You can move, or remove it, as needed.
+                // this.item_masterTableAdapter.Fill(this.medicalDataSet._Item_master);
+                // TODO: This line of code loads data into the 'medicalDataSet3._Customer_Master' table. You can move, or remove it, as needed.
+                //this.customer_MasterTableAdapter.Fill(this.medicalDataSet3._Customer_Master);
+                // TODO: This line of code loads data into the 'medicalDataSet1.Stock' table. You can move, or remove it, as needed.
+                //this.stockTableAdapter.Fill(this.medicalDataSet1.Stock);
+                // TODO: This line of code loads data into the 'medicalDataSet4._Sales_Final' table. You can move, or remove it, as needed.
+                //this.sales_FinalTableAdapter.Fill(this.medicalDataSet4._Sales_Final);
+                // TODO: This line of code loads data into the 'medicalDataSet4.Sales' table. You can move, or remove it, as needed.
+                // this.salesTableAdapter.Fill(this.medicalDataSet4.Sales);
+
+                //dataGridView2.Hide();
+                comboBox1.Text = "";
+                textBox2.Text = "";
+                comboBox2.Text = "";
+                comboBox3.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox11.Text = "";
+                textBox7.Text = "";
+                textBox8.Text = "";
+                textBox9.Text = "";
 
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
 
-            con.Open();
-            SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM  [Sales-Final]", con);
-            DataSet ds1 = new DataSet();
-            adptr1.Fill(ds1);
-            DataTable dt1 = ds1.Tables[0];
-            dataGridView1.DataSource = dt1;
-            int b = (dt1.Rows.Count);
-            b++;
-            textBox1.Text = b.ToString();
 
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+
+                con.Open();
+                SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM  [Sales-Final]", con);
+                DataSet ds1 = new DataSet();
+                adptr1.Fill(ds1);
+                DataTable dt1 = ds1.Tables[0];
+                dataGridView1.DataSource = dt1;
+                int b = (dt1.Rows.Count);
+                b++;
+                textBox1.Text = b.ToString();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)

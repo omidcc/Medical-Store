@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,6 +13,8 @@ namespace Medical_store
 {
     public partial class SupplierMaster : Form
     {
+	string ConnectionString =
+                ConfigurationManager.ConnectionStrings["MedicalConnectionString"].ConnectionString;
         public int id;
         public SupplierMaster(Medical_store.Mdi_parent1 parent)
         {
@@ -23,12 +26,43 @@ namespace Medical_store
         {
             // TODO: This line of code loads data into the 'medicalDataSet2._supplier_master' table. You can move, or remove it, as needed.
             //this.supplier_masterTableAdapter.Fill(this.medicalDataSet2._supplier_master);
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
+           
+            try
+            {
+                // TODO: This line of code loads data into the 'medicalDataSet1.Stock' table. You can move, or remove it, as needed.
+                //this.stockTableAdapter.Fill(this.medicalDataSet1.Stock);
+                // TODO: This line of code loads data into the 'medicalDataSet._Item_master' table. You can move, or remove it, as needed.
+                // this.item_masterTableAdapter.Fill(this.medicalDataSet._Item_master);
+
+
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+
+
+                SqlConnection con = new SqlConnection(ConnectionString );
+                
+
+                con.Open();
+
+                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [Suppliermaster]", con);
+                DataSet ds = new DataSet();
+                adptr.Fill(ds);
+                DataTable dt = ds.Tables[0];
+                dataGridView1.DataSource = dt;
+                int b = (dt.Rows.Count);
+                b++;
+                textBox1.Text = b.ToString();
+                con.Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -55,8 +89,8 @@ namespace Medical_store
             textBox4.Text = "";
             textBox5.Text = "";
             textBox6.Text = "";
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+            SqlConnection con = new SqlConnection(ConnectionString);
+           
 
             con.Open();
 
@@ -75,8 +109,8 @@ namespace Medical_store
             //insert
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
 
                 con.Open();
 
@@ -86,13 +120,13 @@ namespace Medical_store
                 cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 //cmd.CommandText = "INSERT INTO supplier-master VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
-                cmd.CommandText = "INSERT INTO [supplier-master] VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
+                cmd.CommandText = "INSERT INTO [Suppliermaster] VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record is succesfully added", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 cmd.Connection.Close();
 
-                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [supplier-master]", con);
+                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [Suppliermaster]", con);
                 DataSet ds = new DataSet();
                 adptr.Fill(ds);
                 DataTable dt = ds.Tables[0];
@@ -122,8 +156,8 @@ namespace Medical_store
             //update
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
 
                 con.Open();
 
@@ -132,12 +166,12 @@ namespace Medical_store
                 cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "UPDATE [supplier-master] SET [supplier-id]='" + textBox1.Text + "',[supllier-name]='" + textBox2.Text + "',[address]='" + textBox3.Text + "',[city]='" + textBox4.Text + "',[Mo-No]='" + textBox5.Text + "',[Phone-No]='" + textBox6.Text + "' WHERE  [supplier-id]= '" + textBox1.Text + "'";
+                cmd.CommandText = "UPDATE [Suppliermaster] SET [SupplierId]='" + textBox1.Text + "',[SupplierName]='" + textBox2.Text + "',[Address]='" + textBox3.Text + "',[City]='" + textBox4.Text + "',[MobileNo]='" + textBox5.Text + "',[PhoneNo]='" + textBox6.Text + "' WHERE  [SupplierId]= '" + textBox1.Text + "'";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record is succesfully updated", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmd.Connection.Close();
 
-                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [supplier-master]", con);
+                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [Suppliermaster]", con);
                 DataSet ds = new DataSet();
                 adptr.Fill(ds);
                 DataTable dt = ds.Tables[0];
@@ -155,9 +189,8 @@ namespace Medical_store
             //delete query 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
-                //con.ConnectionString = @"Data Source=PRAKASH\SQLEXPRESS;Initial Catalog=info;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
                 con.Open();
 
 
@@ -166,7 +199,7 @@ namespace Medical_store
                 cmd.CommandType = CommandType.Text;
 
 
-                cmd.CommandText = "select * from [supplier-master]";
+                cmd.CommandText = "select * from [Suppliermaster]";
                 DialogResult result = MessageBox.Show("Do You Really Want TO Delete This Record", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.No)
                 {
@@ -174,7 +207,7 @@ namespace Medical_store
                 }
                 else
                 {
-                    cmd.CommandText = "DELETE FROM [supplier-master] WHERE [supplier-id]= '" + textBox1.Text + "'";
+                    cmd.CommandText = "DELETE FROM [Suppliermaster] WHERE [SupplierId]= '" + textBox1.Text + "'";
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Selected Record is deleted", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -182,7 +215,7 @@ namespace Medical_store
 
                 cmd.Connection.Close();
 
-                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [supplier-master]", con);
+                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [Suppliermaster]", con);
                 DataSet ds = new DataSet();
                 adptr.Fill(ds);
                 DataTable dt = ds.Tables[0];
@@ -200,12 +233,12 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
-                SqlDataAdapter adptr = new SqlDataAdapter("Select * From [supplier-master]", con);
+                SqlDataAdapter adptr = new SqlDataAdapter("Select * From [Supplier-master]", con);
 
                 DataSet ds = new DataSet();
 
@@ -221,8 +254,8 @@ namespace Medical_store
                 id = id + 1;
                 if (id <= dt.Rows.Count)
                 {
-                    button2.Enabled = true;
-                    button10.Enabled = true;
+                    //button2.Enabled = true;
+                    //button10.Enabled = true;
 
                     textBox1.Text = (dt.Rows[id - 1][0]).ToString();
                     textBox2.Text = (dt.Rows[id - 1][1]).ToString();
@@ -236,7 +269,7 @@ namespace Medical_store
                 }
                 else
                 {
-                    button2.Enabled = false;
+                   // button2.Enabled = false;
                 }
             }
             catch (Exception s)
@@ -251,8 +284,8 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -271,8 +304,8 @@ namespace Medical_store
                 }
                 else
                 {
-                    button8.Enabled = true;
-                    button9.Enabled = true;
+                    //button8.Enabled = true;
+                    //button9.Enabled = true;
 
                     textBox1.Text = (dt.Rows[id][0]).ToString();
                     textBox2.Text = (dt.Rows[id][1]).ToString();
@@ -299,8 +332,8 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -319,8 +352,8 @@ namespace Medical_store
                 }
                 else
                 {
-                    button8.Enabled = true;
-                    button9.Enabled = true;
+                    //button8.Enabled = true;
+                    //button9.Enabled = true;
 
                     textBox1.Text = (dt.Rows[0][0]).ToString();
                     textBox2.Text = (dt.Rows[0][1]).ToString();
@@ -345,8 +378,8 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -366,8 +399,8 @@ namespace Medical_store
                 id = id - 1;
                 if (id > 0)
                 {
-                    button2.Enabled = true;
-                    button10.Enabled = true;
+                    //button2.Enabled = true;
+                    //button10.Enabled = true;
 
                     textBox1.Text = (dt.Rows[id - 1][0]).ToString();
                     textBox2.Text = (dt.Rows[id - 1][1]).ToString();
@@ -383,13 +416,25 @@ namespace Medical_store
                 }
                 else
                 {
-                    button10.Enabled = false;
+                    //button10.Enabled = false;
                 }
             }
             catch (Exception s)
             {
                 MessageBox.Show(s.Message);
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[i];
+            textBox1.Text = row.Cells[0].Value.ToString();
+            textBox2.Text = row.Cells[1].Value.ToString();
+            textBox3.Text = row.Cells[2].Value.ToString();
+            textBox4.Text = row.Cells[3].Value.ToString();
+            textBox5.Text = row.Cells[4].Value.ToString();
+            textBox6.Text = row.Cells[5].Value.ToString();
         }
     }
 }

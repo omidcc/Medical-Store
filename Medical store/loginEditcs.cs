@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,6 +13,9 @@ namespace Medical_store
 {
     public partial class loginEditcs : Form
     {
+string ConnectionString =
+                ConfigurationManager.ConnectionStrings["MedicalConnectionString"].ConnectionString;
+        
         public loginEditcs(Medical_store.Mdi_parent1 parent)
         {
             InitializeComponent();
@@ -51,14 +55,14 @@ namespace Medical_store
             }
             else
             {
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection conn = new SqlConnection(ConnectionString );
+              
 
                 try
                 {
                     conn.Open();
 
-                    SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM Login", conn);
+                    SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM Usermaster", conn);
 
                     DataSet ds = new DataSet();
 
@@ -68,7 +72,7 @@ namespace Medical_store
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         //Condition for checking existance of username;
-                        if (TextBox1.Text == (dt.Rows[i][0]).ToString())
+                        if (TextBox1.Text == (dt.Rows[i][1]).ToString())
                         {
                             MessageBox.Show("Enter Different User Name", "User Name Already Exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             TextBox1.Focus();
@@ -82,7 +86,7 @@ namespace Medical_store
                         cmd = conn.CreateCommand();
                         cmd.CommandType = CommandType.Text;
 
-                        cmd.CommandText = "INSERT INTO Login VALUES('" + TextBox1.Text + "','" + TextBox2.Text + "')";
+                        cmd.CommandText = "INSERT INTO Usermaster VALUES('" + TextBox1.Text + "','" + TextBox2.Text + "')";
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("You Account Has Been Successfully Created", "CONGRATULATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -119,21 +123,21 @@ namespace Medical_store
         private void button7_Click(object sender, EventArgs e)
         {
             //delete Account
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(ConnectionString );
+            
 
             try
             {
                 conn.Open();
 
-                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM Login", conn);
+                SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM Usermaster", conn);
                 DataSet ds = new DataSet();
                 adptr.Fill(ds);
                 DataTable dt = ds.Tables[0];
                 int t = 0;
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    if (TextBox1.Text == (dt.Rows[i][0]).ToString() && TextBox2.Text == (dt.Rows[i][1]).ToString())
+                    if (TextBox1.Text == (dt.Rows[i][1]).ToString() && TextBox2.Text == (dt.Rows[i][2]).ToString())
                     {
                         DialogResult result = MessageBox.Show("Do you really want to delete your account", "Confirm to delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
@@ -144,7 +148,7 @@ namespace Medical_store
                                 cmd = conn.CreateCommand();
                                 cmd.CommandType = CommandType.Text;
 
-                                cmd.CommandText = "DELETE FROM Login WHERE [User-Name]=  '" + TextBox1.Text + "' ";
+                                cmd.CommandText = "DELETE FROM Usermaster WHERE [Username]=  '" + TextBox1.Text + "' ";
                                 cmd.ExecuteNonQuery();
                                 TextBox1.Focus();
                                 TextBox2.Text = "";

@@ -65,14 +65,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.sales_FinalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -92,12 +85,6 @@
             this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalvatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPrizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.companyNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saleQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.availableQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesTableAdapter = new Medical_store.MedicalDataSet4TableAdapters.SalesTableAdapter();
             this.tableAdapterManager = new Medical_store.MedicalDataSet4TableAdapters.TableAdapterManager();
             this.sales_FinalTableAdapter = new Medical_store.MedicalDataSet4TableAdapters.Sales_FinalTableAdapter();
@@ -105,6 +92,19 @@
             this.tableAdapterManager1 = new Medical_store.MedicalDataSet1TableAdapters.TableAdapterManager();
             this.customer_MasterTableAdapter = new Medical_store.MedicalDataSet3TableAdapters.Customer_MasterTableAdapter();
             this.item_masterTableAdapter = new Medical_store.MedicalDataSetTableAdapters.Item_masterTableAdapter();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.availableQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saleQTYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
@@ -113,12 +113,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemmasterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet)).BeginInit();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sales_FinalBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerMasterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,7 +264,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(582, 35);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 16);
+            this.label7.Size = new System.Drawing.Size(63, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "Total Vat";
             // 
@@ -436,7 +436,7 @@
             this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(582, 75);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(76, 16);
+            this.label18.Size = new System.Drawing.Size(75, 16);
             this.label18.TabIndex = 6;
             this.label18.Text = "Total prize";
             // 
@@ -446,7 +446,7 @@
             this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(342, 35);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 16);
+            this.label17.Size = new System.Drawing.Size(28, 16);
             this.label17.TabIndex = 5;
             this.label17.Text = "Vat";
             // 
@@ -500,84 +500,10 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "SR.NO";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(396, 435);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(313, 110);
-            this.groupBox3.TabIndex = 47;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Amount Info";
-            // 
-            // textBox8
-            // 
-            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sales_FinalBindingSource, "Total-Vat-AMT", true));
-            this.textBox8.Location = new System.Drawing.Point(173, 18);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(132, 26);
-            this.textBox8.TabIndex = 115;
-            // 
             // sales_FinalBindingSource
             // 
             this.sales_FinalBindingSource.DataMember = "Sales-Final";
             this.sales_FinalBindingSource.DataSource = this.medicalDataSet4;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(14, 50);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(151, 23);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "Total Net Amount";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 23);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Total Vat Amount";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(17, 80);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 23);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Total Amount";
-            // 
-            // textBox9
-            // 
-            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sales_FinalBindingSource, "Total-Net-AMT", true));
-            this.textBox9.Location = new System.Drawing.Point(173, 49);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(132, 26);
-            this.textBox9.TabIndex = 113;
-            // 
-            // textBox7
-            // 
-            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sales_FinalBindingSource, "Total-AMT", true));
-            this.textBox7.Location = new System.Drawing.Point(172, 79);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(135, 26);
-            this.textBox7.TabIndex = 114;
             // 
             // groupBox1
             // 
@@ -756,55 +682,6 @@
             this.totalPrizeDataGridViewTextBoxColumn.HeaderText = "Total-Prize";
             this.totalPrizeDataGridViewTextBoxColumn.Name = "totalPrizeDataGridViewTextBoxColumn";
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.companyNameDataGridViewTextBoxColumn1,
-            this.itemIdDataGridViewTextBoxColumn,
-            this.saleQTYDataGridViewTextBoxColumn,
-            this.purchaseQTYDataGridViewTextBoxColumn,
-            this.availableQTYDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.stockBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(22, 436);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(329, 57);
-            this.dataGridView2.TabIndex = 51;
-            // 
-            // companyNameDataGridViewTextBoxColumn1
-            // 
-            this.companyNameDataGridViewTextBoxColumn1.DataPropertyName = "Company-Name";
-            this.companyNameDataGridViewTextBoxColumn1.HeaderText = "Company-Name";
-            this.companyNameDataGridViewTextBoxColumn1.Name = "companyNameDataGridViewTextBoxColumn1";
-            // 
-            // itemIdDataGridViewTextBoxColumn
-            // 
-            this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "Item-Id";
-            this.itemIdDataGridViewTextBoxColumn.HeaderText = "Item-Id";
-            this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
-            // 
-            // saleQTYDataGridViewTextBoxColumn
-            // 
-            this.saleQTYDataGridViewTextBoxColumn.DataPropertyName = "Sale-QTY";
-            this.saleQTYDataGridViewTextBoxColumn.HeaderText = "Sale-QTY";
-            this.saleQTYDataGridViewTextBoxColumn.Name = "saleQTYDataGridViewTextBoxColumn";
-            this.saleQTYDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // purchaseQTYDataGridViewTextBoxColumn
-            // 
-            this.purchaseQTYDataGridViewTextBoxColumn.DataPropertyName = "Purchase-QTY";
-            this.purchaseQTYDataGridViewTextBoxColumn.HeaderText = "Purchase-QTY";
-            this.purchaseQTYDataGridViewTextBoxColumn.Name = "purchaseQTYDataGridViewTextBoxColumn";
-            this.purchaseQTYDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // availableQTYDataGridViewTextBoxColumn
-            // 
-            this.availableQTYDataGridViewTextBoxColumn.DataPropertyName = "Available-QTY";
-            this.availableQTYDataGridViewTextBoxColumn.HeaderText = "Available-QTY";
-            this.availableQTYDataGridViewTextBoxColumn.Name = "availableQTYDataGridViewTextBoxColumn";
-            this.availableQTYDataGridViewTextBoxColumn.Width = 50;
-            // 
             // salesTableAdapter
             // 
             this.salesTableAdapter.ClearBeforeFill = true;
@@ -838,6 +715,129 @@
             // 
             this.item_masterTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox7
+            // 
+            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sales_FinalBindingSource, "Total-AMT", true));
+            this.textBox7.Location = new System.Drawing.Point(172, 79);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(135, 26);
+            this.textBox7.TabIndex = 114;
+            // 
+            // textBox9
+            // 
+            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sales_FinalBindingSource, "Total-Net-AMT", true));
+            this.textBox9.Location = new System.Drawing.Point(173, 49);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(132, 26);
+            this.textBox9.TabIndex = 113;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(17, 80);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 23);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Total Amount";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(13, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(149, 23);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Total Vat Amount";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(14, 50);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(150, 23);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Total Net Amount";
+            // 
+            // textBox8
+            // 
+            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sales_FinalBindingSource, "Total-Vat-AMT", true));
+            this.textBox8.Location = new System.Drawing.Point(173, 18);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(132, 26);
+            this.textBox8.TabIndex = 115;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(396, 435);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(313, 110);
+            this.groupBox3.TabIndex = 47;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Amount Info";
+            // 
+            // availableQTYDataGridViewTextBoxColumn
+            // 
+            this.availableQTYDataGridViewTextBoxColumn.DataPropertyName = "Available-QTY";
+            this.availableQTYDataGridViewTextBoxColumn.HeaderText = "Available-QTY";
+            this.availableQTYDataGridViewTextBoxColumn.Name = "availableQTYDataGridViewTextBoxColumn";
+            this.availableQTYDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // purchaseQTYDataGridViewTextBoxColumn
+            // 
+            this.purchaseQTYDataGridViewTextBoxColumn.DataPropertyName = "Purchase-QTY";
+            this.purchaseQTYDataGridViewTextBoxColumn.HeaderText = "Purchase-QTY";
+            this.purchaseQTYDataGridViewTextBoxColumn.Name = "purchaseQTYDataGridViewTextBoxColumn";
+            this.purchaseQTYDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // saleQTYDataGridViewTextBoxColumn
+            // 
+            this.saleQTYDataGridViewTextBoxColumn.DataPropertyName = "Sale-QTY";
+            this.saleQTYDataGridViewTextBoxColumn.HeaderText = "Sale-QTY";
+            this.saleQTYDataGridViewTextBoxColumn.Name = "saleQTYDataGridViewTextBoxColumn";
+            this.saleQTYDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // itemIdDataGridViewTextBoxColumn
+            // 
+            this.itemIdDataGridViewTextBoxColumn.DataPropertyName = "Item-Id";
+            this.itemIdDataGridViewTextBoxColumn.HeaderText = "Item-Id";
+            this.itemIdDataGridViewTextBoxColumn.Name = "itemIdDataGridViewTextBoxColumn";
+            // 
+            // companyNameDataGridViewTextBoxColumn1
+            // 
+            this.companyNameDataGridViewTextBoxColumn1.DataPropertyName = "Company-Name";
+            this.companyNameDataGridViewTextBoxColumn1.HeaderText = "Company-Name";
+            this.companyNameDataGridViewTextBoxColumn1.Name = "companyNameDataGridViewTextBoxColumn1";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.companyNameDataGridViewTextBoxColumn1,
+            this.itemIdDataGridViewTextBoxColumn,
+            this.saleQTYDataGridViewTextBoxColumn,
+            this.purchaseQTYDataGridViewTextBoxColumn,
+            this.availableQTYDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.stockBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(22, 436);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(329, 57);
+            this.dataGridView2.TabIndex = 51;
+            // 
             // SaleBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,14 +863,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemmasterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sales_FinalBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerMasterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -909,13 +909,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox10;
@@ -925,7 +918,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private MedicalDataSet4 medicalDataSet4;
         private System.Windows.Forms.BindingSource salesBindingSource;
         private Medical_store.MedicalDataSet4TableAdapters.SalesTableAdapter salesTableAdapter;
@@ -942,11 +934,6 @@
         private MedicalDataSet medicalDataSet;
         private System.Windows.Forms.BindingSource itemmasterBindingSource;
         private Medical_store.MedicalDataSetTableAdapters.Item_masterTableAdapter item_masterTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saleQTYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseQTYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn availableQTYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn srNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelIdDataGridViewTextBoxColumn;
@@ -955,5 +942,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalvatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPrizeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn availableQTYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseQTYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saleQTYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

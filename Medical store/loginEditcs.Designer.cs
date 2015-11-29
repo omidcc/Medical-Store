@@ -37,15 +37,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.TextBox1 = new System.Windows.Forms.TextBox();
+            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.medicalDataSet6 = new Medical_store.MedicalDataSet6();
             this.TextBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.medicalDataSet6 = new Medical_store.MedicalDataSet6();
             this.loginTableAdapter = new Medical_store.MedicalDataSet6TableAdapters.LoginTableAdapter();
             this.tableAdapterManager = new Medical_store.MedicalDataSet6TableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +70,7 @@
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(83, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(455, 42);
+            this.label3.Size = new System.Drawing.Size(454, 42);
             this.label3.TabIndex = 19;
             this.label3.Text = "Medical Store Management";
             // 
@@ -133,6 +132,16 @@
             this.TextBox1.Size = new System.Drawing.Size(160, 20);
             this.TextBox1.TabIndex = 22;
             // 
+            // loginBindingSource
+            // 
+            this.loginBindingSource.DataMember = "Login";
+            this.loginBindingSource.DataSource = this.medicalDataSet6;
+            // 
+            // medicalDataSet6
+            // 
+            this.medicalDataSet6.DataSetName = "MedicalDataSet6";
+            this.medicalDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // TextBox2
             // 
             this.TextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -158,8 +167,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic)
-                            | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(163, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(259, 27);
@@ -177,21 +186,10 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(78, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 28);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "&NEW";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(183, 315);
+            this.button5.Location = new System.Drawing.Point(164, 315);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(63, 28);
             this.button5.TabIndex = 23;
@@ -202,23 +200,13 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(302, 315);
+            this.button7.Location = new System.Drawing.Point(295, 315);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(74, 28);
             this.button7.TabIndex = 25;
             this.button7.Text = "&DELETE";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // loginBindingSource
-            // 
-            this.loginBindingSource.DataMember = "Login";
-            this.loginBindingSource.DataSource = this.medicalDataSet6;
-            // 
-            // medicalDataSet6
-            // 
-            this.medicalDataSet6.DataSetName = "MedicalDataSet6";
-            this.medicalDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // loginTableAdapter
             // 
@@ -239,7 +227,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
@@ -273,7 +260,6 @@
         internal System.Windows.Forms.TextBox TextBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button7;
     }

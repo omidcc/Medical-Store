@@ -43,12 +43,10 @@ F:\Medical store project\Medical store\obj\Debug\Medical_store.salesreg.resource
 F:\Medical store project\Medical store\obj\Debug\Medical_store.SupplierMaster.resources
 F:\Medical store project\Medical store\obj\Debug\Medical store.csproj.GenerateResource.Cache
 G:\Medical store project\Medical store\bin\Debug\Medical store.exe.config
-G:\Medical store project\Medical store\obj\Debug\Medical store.exe
-G:\Medical store project\Medical store\obj\Debug\Medical store.pdb
 G:\Medical store project\Medical store\bin\Debug\Medical store.exe
 G:\Medical store project\Medical store\bin\Debug\Medical store.pdb
-G:\Medical store project\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache
 G:\Medical store project\Medical store\obj\Debug\Medical_store.Calander.resources
+G:\Medical store project\Medical store\obj\Debug\Medical_store.Company.resources
 G:\Medical store project\Medical store\obj\Debug\Medical_store.ContactUs.resources
 G:\Medical store project\Medical store\obj\Debug\Medical_store.Customermaster.resources
 G:\Medical store project\Medical store\obj\Debug\Medical_store.ItemMaster.resources
@@ -64,3 +62,6 @@ G:\Medical store project\Medical store\obj\Debug\Medical_store.SaleBill.resource
 G:\Medical store project\Medical store\obj\Debug\Medical_store.salesreg.resources
 G:\Medical store project\Medical store\obj\Debug\Medical_store.SupplierMaster.resources
 G:\Medical store project\Medical store\obj\Debug\Medical store.csproj.GenerateResource.Cache
+G:\Medical store project\Medical store\obj\Debug\Medical store.exe
+G:\Medical store project\Medical store\obj\Debug\Medical store.pdb
+G:\Medical store project\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache

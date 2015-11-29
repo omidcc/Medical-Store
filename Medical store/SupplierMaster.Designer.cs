@@ -46,25 +46,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.supplier_masterTableAdapter = new Medical_store.MedicalDataSet2TableAdapters.supplier_masterTableAdapter();
+            this.tableAdapterManager = new Medical_store.MedicalDataSet2TableAdapters.TableAdapterManager();
             this.supplieridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.suplliernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplier_masterTableAdapter = new Medical_store.MedicalDataSet2TableAdapters.supplier_masterTableAdapter();
-            this.tableAdapterManager = new Medical_store.MedicalDataSet2TableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplier_masterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).BeginInit();
@@ -213,11 +208,6 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.button10);
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.button6);
@@ -243,67 +233,12 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Supplier Master";
             // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(79, 118);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "<";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(83, 167);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 15;
-            this.button9.Text = "<<";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(177, 167);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 14;
-            this.button8.Text = ">>";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(177, 117);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = ">";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(79, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "&New";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(229, 66);
+            this.button3.Location = new System.Drawing.Point(128, 161);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(65, 28);
+            this.button3.Size = new System.Drawing.Size(75, 28);
             this.button3.TabIndex = 12;
             this.button3.Text = "&Close";
             this.button3.UseVisualStyleBackColor = true;
@@ -312,7 +247,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(34, 66);
+            this.button5.Location = new System.Drawing.Point(128, 115);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 28);
             this.button5.TabIndex = 10;
@@ -334,7 +269,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(181, 18);
+            this.button7.Location = new System.Drawing.Point(128, 21);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 28);
             this.button7.TabIndex = 8;
@@ -371,43 +306,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(689, 150);
             this.dataGridView1.TabIndex = 22;
-            // 
-            // supplieridDataGridViewTextBoxColumn
-            // 
-            this.supplieridDataGridViewTextBoxColumn.DataPropertyName = "supplier-id";
-            this.supplieridDataGridViewTextBoxColumn.HeaderText = "supplier-id";
-            this.supplieridDataGridViewTextBoxColumn.Name = "supplieridDataGridViewTextBoxColumn";
-            // 
-            // suplliernameDataGridViewTextBoxColumn
-            // 
-            this.suplliernameDataGridViewTextBoxColumn.DataPropertyName = "supllier-name";
-            this.suplliernameDataGridViewTextBoxColumn.HeaderText = "supllier-name";
-            this.suplliernameDataGridViewTextBoxColumn.Name = "suplliernameDataGridViewTextBoxColumn";
-            this.suplliernameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "city";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "city";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            // 
-            // moNoDataGridViewTextBoxColumn
-            // 
-            this.moNoDataGridViewTextBoxColumn.DataPropertyName = "Mo-No";
-            this.moNoDataGridViewTextBoxColumn.HeaderText = "Mo-No";
-            this.moNoDataGridViewTextBoxColumn.Name = "moNoDataGridViewTextBoxColumn";
-            // 
-            // phoneNoDataGridViewTextBoxColumn
-            // 
-            this.phoneNoDataGridViewTextBoxColumn.DataPropertyName = "Phone-No";
-            this.phoneNoDataGridViewTextBoxColumn.HeaderText = "Phone-No";
-            this.phoneNoDataGridViewTextBoxColumn.Name = "phoneNoDataGridViewTextBoxColumn";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // supplier_masterTableAdapter
             // 
@@ -418,6 +317,43 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.supplier_masterTableAdapter = this.supplier_masterTableAdapter;
             this.tableAdapterManager.UpdateOrder = Medical_store.MedicalDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // supplieridDataGridViewTextBoxColumn
+            // 
+            this.supplieridDataGridViewTextBoxColumn.DataPropertyName = "SupplierId";
+            this.supplieridDataGridViewTextBoxColumn.HeaderText = "supplier-id";
+            this.supplieridDataGridViewTextBoxColumn.Name = "supplieridDataGridViewTextBoxColumn";
+            // 
+            // suplliernameDataGridViewTextBoxColumn
+            // 
+            this.suplliernameDataGridViewTextBoxColumn.DataPropertyName = "SupplierName";
+            this.suplliernameDataGridViewTextBoxColumn.HeaderText = "supllier-name";
+            this.suplliernameDataGridViewTextBoxColumn.Name = "suplliernameDataGridViewTextBoxColumn";
+            this.suplliernameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "city";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            // 
+            // moNoDataGridViewTextBoxColumn
+            // 
+            this.moNoDataGridViewTextBoxColumn.DataPropertyName = "MobileNo";
+            this.moNoDataGridViewTextBoxColumn.HeaderText = "Mo-No";
+            this.moNoDataGridViewTextBoxColumn.Name = "moNoDataGridViewTextBoxColumn";
+            // 
+            // phoneNoDataGridViewTextBoxColumn
+            // 
+            this.phoneNoDataGridViewTextBoxColumn.DataPropertyName = "PhoneNo";
+            this.phoneNoDataGridViewTextBoxColumn.HeaderText = "Phone-No";
+            this.phoneNoDataGridViewTextBoxColumn.Name = "phoneNoDataGridViewTextBoxColumn";
             // 
             // SupplierMaster
             // 
@@ -461,11 +397,6 @@
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         internal System.Windows.Forms.Button button3;
         internal System.Windows.Forms.Button button5;
         internal System.Windows.Forms.Button button6;

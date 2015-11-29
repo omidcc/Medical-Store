@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,6 +13,9 @@ namespace Medical_store
 {
     public partial class ItemMaster : Form
     {
+string ConnectionString =
+                ConfigurationManager.ConnectionStrings["MedicalConnectionString"].ConnectionString;
+       
         public int ch,id;
         public ItemMaster(Medical_store.Mdi_parent1 parent)
         {
@@ -28,13 +32,13 @@ namespace Medical_store
                 // TODO: This line of code loads data into the 'medicalDataSet._Item_master' table. You can move, or remove it, as needed.
                // this.item_masterTableAdapter.Fill(this.medicalDataSet._Item_master);
 
-                comboBox1.Text = "";
+                this.LoadCompanyCombo();
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
-                groupBox3.Enabled = false;
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=MedicalStoreDB;Integrated Security=True";
+               // groupBox3.Enabled = false;
+                SqlConnection con = new SqlConnection(ConnectionString );
+               
 
                 con.Open();
 
@@ -68,9 +72,8 @@ namespace Medical_store
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
-
+            SqlConnection con = new SqlConnection(ConnectionString );
+            
             con.Open();
 
             SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [Item-master]", con);
@@ -88,9 +91,8 @@ namespace Medical_store
             //insert query 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=MedicalStoreDB;Integrated Security=True";
-
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
 
                 if (con.State == ConnectionState.Closed)
                     con.Open();
@@ -129,10 +131,11 @@ namespace Medical_store
         private void button4_Click(object sender, EventArgs e)
         {
             //update query
+            this.LoadCompanyCombo();
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=MedicalStoreDB;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
 
                 con.Open();
 
@@ -163,8 +166,8 @@ namespace Medical_store
             //delete query  
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=MedicalStoreDB;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
                
                 con.Open();
 
@@ -205,85 +208,19 @@ namespace Medical_store
 
         private void button7_Click(object sender, EventArgs e)
         {
-            groupBox3.Enabled = true;
-            radioButton1.Focus();
+            //groupBox3.Enabled = true;
+            //radioButton1.Focus();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             //search Ok button
-            try
-            {
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
-
-                SqlCommand cmd = new SqlCommand();
-                cmd = conn.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-
-                if (ch == 1)
-                {
-                    cmd.CommandText = "SELECT * FROM [Item-master] WHERE [Item-id] = '" + textBox4.Text + "' ";
-                    SqlDataAdapter adptr = new SqlDataAdapter(cmd.CommandText, conn);
-                    DataSet ds = new DataSet();
-                    adptr.Fill(ds);
-                    DataTable dt = ds.Tables[0];
-                    dataGridView1.DataSource = dt;
-                    MessageBox.Show("Record Found", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //groupBox3.Hide();
-
-                    int s = int.Parse(textBox4.Text);
-                    s--;
-                    groupBox1.Show();
-
-                    textBox1.Text = (dt.Rows[s][0]).ToString();
-                    comboBox1.Text = (dt.Rows[s][1]).ToString();
-                    textBox2.Text = (dt.Rows[s][2]).ToString();
-                    textBox3.Text = (dt.Rows[s][3]).ToString();
-
-
-
-                    textBox1.Focus();
-
-                }
-                if (ch == 2)
-                {
-                    cmd.CommandText = "SELECT * FROM [Item-master] WHERE [Company-Name] = '" + textBox5.Text + "' ";
-                    SqlDataAdapter adptr = new SqlDataAdapter(cmd.CommandText, conn);
-                    DataSet ds = new DataSet();
-                    adptr.Fill(ds);
-                    DataTable dt = ds.Tables[0];
-                    dataGridView1.DataSource = dt;
-                    MessageBox.Show((dt.Rows.Count).ToString(), "No.Of Record Found", MessageBoxButtons.OK);
-
-                }
-                if (ch == 3)
-                {
-                    cmd.CommandText = "SELECT * FROM [Item-master] WHERE Prize = '" + textBox6.Text + "' ";
-                    SqlDataAdapter adptr = new SqlDataAdapter(cmd.CommandText, conn);
-                    DataSet ds = new DataSet();
-                    adptr.Fill(ds);
-                    DataTable dt = ds.Tables[0];
-                    dataGridView1.DataSource = dt;
-                    MessageBox.Show((dt.Rows.Count).ToString(), "No.Of Record Found", MessageBoxButtons.OK);
-
-                }
-
-                //groupBox1.Hide();
-                //buttonRefresh.Show();
-                conn.Close();
-            }
-            catch (Exception s)
-            {
-                //MessageBox.Show(s.Message);
-            }
+            //
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            groupBox3.Enabled = false;
+            //groupBox3.Enabled = false;
 
         }
 
@@ -293,8 +230,8 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+                
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -344,8 +281,7 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -391,8 +327,7 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -438,8 +373,7 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -490,26 +424,12 @@ namespace Medical_store
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
-            {
-                ch = 1;
-                textBox4.Enabled = true;
-                textBox5.Enabled = false;
-                textBox6.Enabled = false;
-
-            }
+           
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton2.Checked)
-            {
-                ch = 2;
-                textBox4.Enabled = false;
-                textBox5.Enabled = true;
-                textBox6.Enabled = false;
-
-            }
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -523,14 +443,29 @@ namespace Medical_store
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton3.Checked)
-            {
-                ch = 3;
-                textBox4.Enabled = false;
-                textBox5.Enabled = false;
-                textBox6.Enabled = true;
+           
+        }
 
+        void LoadCompanyCombo()
+        {
+            
+           // string Query = "select CompanyName from Company";
+
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string query = "SELECT CompanyName FROM Company";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            
+            List<string>myList=new List<string>();
+            while (reader.Read())
+            {
+                myList.Add(reader["CompanyName"].ToString());
             }
+            connection.Close();
+
+            comboBox1.DataSource = myList;
+            
         }
     }
 }

@@ -52,6 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -73,6 +74,12 @@
     </Compile>
     <Compile Include="Calander.Designer.cs">
       <DependentUpon>Calander.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Company.Designer.cs">
+      <DependentUpon>Company.cs</DependentUpon>
     </Compile>
     <Compile Include="ContactUs.cs">
       <SubType>Form</SubType>
@@ -165,6 +172,9 @@
     <EmbeddedResource Include="Calander.resx">
       <DependentUpon>Calander.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company.resx">
+      <DependentUpon>Company.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContactUs.resx">
       <DependentUpon>ContactUs.cs</DependentUpon>
