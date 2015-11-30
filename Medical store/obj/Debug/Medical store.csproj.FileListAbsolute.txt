@@ -87,3 +87,4 @@ F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.SupplierMas
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.csproj.GenerateResource.Cache
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.exe
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.pdb
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache
