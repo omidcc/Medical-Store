@@ -68,7 +68,6 @@ G:\Medical store project\Medical store\obj\Debug\Medical store.csprojResolveAsse
 F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.exe.config
 F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.exe
 F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.pdb
-F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Calander.resources
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Company.resources
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.ContactUs.resources
