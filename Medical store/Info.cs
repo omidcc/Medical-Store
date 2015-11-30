@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,6 +14,8 @@ namespace Medical_store
     
     public partial class Info : Form
     {
+        string ConnectionString =
+                ConfigurationManager.ConnectionStrings["MedicalConnectionString"].ConnectionString;
         public int id;
         public Info(Medical_store.Mdi_parent1 parent)
         {
@@ -39,8 +42,8 @@ namespace Medical_store
                 textBox9.Text = "";
                 textBox10.Text = "";
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=MedicalStoreDB;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
+               
 
 
                 con.Open();
@@ -50,6 +53,8 @@ namespace Medical_store
                 DataTable dt = ds.Tables[0];
                 dataGridView1.DataSource = dt;
 
+                int b = dataGridView1.Rows.Count;
+                textBox1.Text = b.ToString();
                 con.Close();
             }
             catch (Exception ex)
@@ -71,8 +76,7 @@ namespace Medical_store
             //insert query  
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=MedicalStoreDB;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -120,8 +124,7 @@ namespace Medical_store
             //delete query 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=MedicalStoreDB;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -165,8 +168,7 @@ namespace Medical_store
             //update query  
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AYSHA-OMI;Initial Catalog=MedicalStoreDB;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -201,8 +203,7 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -253,8 +254,7 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -306,8 +306,7 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 

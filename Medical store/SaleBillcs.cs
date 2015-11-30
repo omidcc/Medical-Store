@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,6 +13,8 @@ namespace Medical_store
 {
     public partial class SaleBill : Form
     {
+        string ConnectionString =
+                ConfigurationManager.ConnectionStrings["MedicalConnectionString"].ConnectionString;
         public int id;
         public string st1, st;
         public SaleBill(Medical_store.Mdi_parent1 parent)
@@ -51,11 +54,11 @@ namespace Medical_store
                 textBox8.Text = "";
                 textBox9.Text = "";
 
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
 
 
-
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
                 SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM  [Sales-Final]", con);
@@ -90,8 +93,10 @@ namespace Medical_store
             textBox6.Text = "";
             textBox11.Text = "";
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+            this.LoadCompanyCombo();
+            this.LoadItemIdCombo();
+
+            SqlConnection con = new SqlConnection(ConnectionString);
             con.Open();
             SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM Sales", con);
             DataSet ds = new DataSet();
@@ -111,8 +116,9 @@ namespace Medical_store
             //update into stock 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -123,7 +129,9 @@ namespace Medical_store
                 cmd.CommandType = CommandType.Text;
 
 
-                cmd.CommandText = "SELECT [Company-Name],[Item-id],[Sale-QTY],[Purchase-QTY],[Available-QTY] FROM Stock WHERE [Item-id]='" + comboBox3.Text + "'";
+                cmd.CommandText =
+                    "SELECT [Company-Name],[Item-id],[Sale-QTY],[Purchase-QTY],[Available-QTY] FROM Stock WHERE [Item-id]='" +
+                    comboBox3.Text + "'";
                 SqlDataReader dar = cmd.ExecuteReader();
 
                 DataTable dt = new DataTable();
@@ -146,26 +154,35 @@ namespace Medical_store
                 q5 = q4 - q1;
 
 
-                cmd.CommandText = "UPDATE Stock SET [Company-Name] ='" + comboBox2.Text + "', [Item-id] ='" + comboBox3.Text + "',  [Sale-QTY] ='" + q3 + "',[Available-QTY]='" + q5 + "' WHERE [Item-id] ='" + comboBox3.Text + "'";
+                cmd.CommandText = "UPDATE Stock SET [Company-Name] ='" + comboBox2.Text + "', [Item-id] ='" +
+                                  comboBox3.Text + "',  [Sale-QTY] ='" + q3 + "',[Available-QTY]='" + q5 +
+                                  "' WHERE [Item-id] ='" + comboBox3.Text + "'";
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = "INSERT INTO Sales VALUES('" + textBox1.Text + "','" + textBox10.Text + "','" + comboBox1.Text + "','" + textBox2.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox11.Text + "')";
+                cmd.CommandText = "INSERT INTO Sales VALUES('" + textBox1.Text + "','" + textBox10.Text + "','" +
+                                  comboBox1.Text + "','" + textBox2.Text + "','" + comboBox2.Text + "','" +
+                                  comboBox3.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text +
+                                  "','" + textBox6.Text + "','" + textBox11.Text + "')";
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Record is succesfully added", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Record is succesfully added", "Congratulation", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
                 DataSet ds = new DataSet();
-                SqlDataAdapter adptr = new SqlDataAdapter("SELECT [Bill-No],Date,[Party-Name],[Sr.No],[Company-Name],[Model-Id],Prize,Vat,Qty,[Total-vat],[Total-Prize] FROM Sales WHERE [Bill-No]='" + textBox1.Text + "'", con);                //DataSet ds = new DataSet();
+                SqlDataAdapter adptr =
+                    new SqlDataAdapter(
+                        "SELECT [Bill-No],Date,[Party-Name],[Sr.No],[Company-Name],[Model-Id],Prize,Vat,Qty,[Total-vat],[Total-Prize] FROM Sales WHERE [Bill-No]='" +
+                        textBox1.Text + "'", con); //DataSet ds = new DataSet();
                 adptr.Fill(ds);
                 DataTable dt1 = ds.Tables[0];
                 dataGridView1.DataSource = dt1;
                 dataGridView1.Rows.Add();
 
                 cmd.Connection.Close();
-
             }
-            catch (Exception S)
+            catch (Exception ex)
             {
-                //MessageBox.Show(S.Message);
+                MessageBox.Show(ex.Message);
             }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -174,8 +191,9 @@ namespace Medical_store
             //update into stock
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -234,9 +252,9 @@ namespace Medical_store
             //next button
             try
             {
-
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -290,9 +308,9 @@ namespace Medical_store
             //Previous button
             try
             {
-
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -358,8 +376,9 @@ namespace Medical_store
 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 if (con.State == ConnectionState.Closed)
                     con.Open();
@@ -413,9 +432,9 @@ namespace Medical_store
             textBox7.Text = "";
             textBox8.Text = "";
             textBox9.Text = "";
-
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+            this.LoadCompanyCombo();
+            this.LoadItemIdCombo();
+            SqlConnection con = new SqlConnection(ConnectionString);
 
             con.Open();
             SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM [Sales-Final]", con);
@@ -434,8 +453,9 @@ namespace Medical_store
             //insert into [Sales-Final]
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -482,8 +502,9 @@ namespace Medical_store
             //update query  [Sales-Final]
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -511,8 +532,9 @@ namespace Medical_store
             //delete query in [Sales-Final]
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                this.LoadCompanyCombo();
+                this.LoadItemIdCombo();
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -539,6 +561,48 @@ namespace Medical_store
             {
                 MessageBox.Show(s.Message);
             }
+        }
+
+        void LoadCompanyCombo()
+        {
+
+            // string Query = "select CompanyName from Company";
+
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string query = "SELECT CompanyName FROM Company";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string> myList = new List<string>();
+            while (reader.Read())
+            {
+                myList.Add(reader["CompanyName"].ToString());
+            }
+            connection.Close();
+
+            comboBox2.DataSource = myList;
+        }
+
+        void LoadItemIdCombo()
+        {
+
+            // string Query = "select CompanyName from Company";
+
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string query = "SELECT ItemId FROM Itemmaster";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string> myList = new List<string>();
+            while (reader.Read())
+            {
+                myList.Add(reader["ItemId"].ToString());
+            }
+            connection.Close();
+
+            comboBox3.DataSource = myList;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,6 +13,8 @@ namespace Medical_store
 {
     public partial class PurechaseBill : Form
     {
+        string ConnectionString =
+                ConfigurationManager.ConnectionStrings["MedicalConnectionString"].ConnectionString;
         public string st, st1;
         public int id;
         
@@ -55,8 +58,7 @@ namespace Medical_store
 
 
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
                 SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM [Purchase-Final]", con);
@@ -97,8 +99,7 @@ namespace Medical_store
             textBox6.Text = "";
             textBox11.Text = "";
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+            SqlConnection con = new SqlConnection(ConnectionString);
 
             con.Open();
             SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM Purchase", con);
@@ -117,8 +118,7 @@ namespace Medical_store
             //insert into purchase query update into stock 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
                 
@@ -176,8 +176,7 @@ namespace Medical_store
             //update into stock
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -244,8 +243,7 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -300,8 +298,7 @@ namespace Medical_store
             try
             {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
@@ -369,8 +366,7 @@ namespace Medical_store
 
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 if (con.State == ConnectionState.Closed)
                     con.Open();
@@ -426,8 +422,7 @@ namespace Medical_store
             textBox8.Text = "";
             textBox9.Text = "";
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+            SqlConnection con = new SqlConnection(ConnectionString);
 
             con.Open();
             SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM [Purchase-Final]", con);
@@ -446,8 +441,7 @@ namespace Medical_store
             //insert into purchasefinal
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -494,8 +488,7 @@ namespace Medical_store
             //update query  [Purchase-Final]
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 
@@ -523,8 +516,7 @@ namespace Medical_store
             //delete query in [Purchase-Final]
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
 

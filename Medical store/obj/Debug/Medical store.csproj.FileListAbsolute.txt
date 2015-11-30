@@ -65,3 +65,26 @@ G:\Medical store project\Medical store\obj\Debug\Medical store.csproj.GenerateRe
 G:\Medical store project\Medical store\obj\Debug\Medical store.exe
 G:\Medical store project\Medical store\obj\Debug\Medical store.pdb
 G:\Medical store project\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache
+F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.exe.config
+F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.exe
+F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.pdb
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Calander.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Company.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.ContactUs.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Customermaster.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.ItemMaster.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.itemStock.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Login.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Info.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.loginEditcs.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Mdi_parent1.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Properties.Resources.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.PurchaseReg.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.PurechaseBill.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.SaleBill.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.salesreg.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.SupplierMaster.resources
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.csproj.GenerateResource.Cache
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.exe
+F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.pdb
