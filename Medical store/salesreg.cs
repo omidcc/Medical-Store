@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -12,6 +13,8 @@ namespace Medical_store
 {
     public partial class salesreg : Form
     {
+        string ConnectionString =
+                ConfigurationManager.ConnectionStrings["MedicalConnectionString"].ConnectionString;
         public salesreg(Medical_store.Mdi_parent1 parent)
         {
             InitializeComponent();
@@ -22,6 +25,17 @@ namespace Medical_store
         {
             // TODO: This line of code loads data into the 'medicalDataSet4._Sales_Final' table. You can move, or remove it, as needed.
           //  this.sales_FinalTableAdapter.Fill(this.medicalDataSet4._Sales_Final);
+            SqlConnection con = new SqlConnection(ConnectionString);
+
+            con.Open();
+
+            SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM [Sales-Final]", con);
+            DataSet ds1 = new DataSet();
+            adptr1.Fill(ds1);
+            DataTable dt1 = ds1.Tables[0];
+            dataGridView1.DataSource = dt1;
+
+            con.Close();
 
         }
 
@@ -35,8 +49,7 @@ namespace Medical_store
             //Total AMT
             try
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=HIREN-9CF1490E8;Initial Catalog=Medical;Integrated Security=True";
+                SqlConnection con = new SqlConnection(ConnectionString);
 
                 if (con.State == ConnectionState.Closed)
                     con.Open();
@@ -70,7 +83,7 @@ namespace Medical_store
             }
             catch (Exception S)
             {
-                //MessageBox.Show(S.Message);
+                MessageBox.Show(S.Message);
             }
         }
     }

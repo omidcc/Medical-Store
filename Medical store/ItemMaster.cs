@@ -107,12 +107,19 @@ string ConnectionString =
                 //cmd.ExecuteNonQuery();
                 MessageBox.Show("Record is succesfully added", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+
+
                 cmd.Connection.Close();
+
+                InsertStock(comboBox1.SelectedItem.ToString(),textBox2.Text,0,0,0);
+
                 SqlDataAdapter adptr = new SqlDataAdapter("SELECT * FROM [Itemmaster]", con);
                 DataSet ds = new DataSet();
                 adptr.Fill(ds);
                 DataTable dt = ds.Tables[0];
                 dataGridView1.DataSource = dt;
+
+
             }
             catch (Exception s)
             {
@@ -127,6 +134,33 @@ string ConnectionString =
 
             }
         }
+
+        private void InsertStock(string toString, string s, int i, int i1, int i2)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(ConnectionString);
+
+
+                con.Open();
+
+                //update query
+                SqlCommand cmd = new SqlCommand();
+                cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+
+                cmd.CommandText = "INSERT INTO [Stock] VALUES('"+toString+"','"+s+"','"+i+"','"+i1+"','"+i2+"')";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record is succesfully updated into stock also", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmd.Connection.Close();
+            }
+            catch (Exception exception)
+            {
+
+                MessageBox.Show(exception.Message);
+            }
+        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {

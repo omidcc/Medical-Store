@@ -25,18 +25,21 @@ namespace Medical_store
 
         private void SaleBill_Load(object sender, EventArgs e)
         {
+            this.LoadCompanyCombo();
+            this.LoadItemIdCombo();
             // TODO: This line of code loads data into the 'medicalDataSet._Item_master' table. You can move, or remove it, as needed.
-           // this.item_masterTableAdapter.Fill(this.medicalDataSet._Item_master);
-            // TODO: This line of code loads data into the 'medicalDataSet3._Customer_Master' table. You can move, or remove it, as needed.
-            //this.customer_MasterTableAdapter.Fill(this.medicalDataSet3._Customer_Master);
+            // this.item_masterTableAdapter.Fill(this.medicalDataSet._Item_master);
+            // TODO: This line of code loads data into the 'medicalDataSet2._supplier_master' table. You can move, or remove it, as needed.
+            //this.supplier_masterTableAdapter.Fill(this.medicalDataSet2._supplier_master);
             // TODO: This line of code loads data into the 'medicalDataSet1.Stock' table. You can move, or remove it, as needed.
-            //this.stockTableAdapter.Fill(this.medicalDataSet1.Stock);
-            // TODO: This line of code loads data into the 'medicalDataSet4._Sales_Final' table. You can move, or remove it, as needed.
-            //this.sales_FinalTableAdapter.Fill(this.medicalDataSet4._Sales_Final);
-            // TODO: This line of code loads data into the 'medicalDataSet4.Sales' table. You can move, or remove it, as needed.
-           // this.salesTableAdapter.Fill(this.medicalDataSet4.Sales);
+            // this.stockTableAdapter.Fill(this.medicalDataSet1.Stock);
+            // TODO: This line of code loads data into the 'medicalDataSet5._Purchase_Final' table. You can move, or remove it, as needed.
+            //this.purchase_FinalTableAdapter.Fill(this.medicalDataSet5._Purchase_Final);
+            // TODO: This line of code loads data into the 'medicalDataSet5.Purchase' table. You can move, or remove it, as needed.
+            //this.purchaseTableAdapter.Fill(this.medicalDataSet5.Purchase);
 
-            //dataGridView2.Hide();
+            // dataGridView2.Hide();
+            textBox10.Text = "";
             comboBox1.Text = "";
             textBox2.Text = "";
             comboBox2.Text = "";
@@ -52,11 +55,10 @@ namespace Medical_store
 
 
 
-
             SqlConnection con = new SqlConnection(ConnectionString);
 
             con.Open();
-            SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM  [Sales-Final]", con);
+            SqlDataAdapter adptr1 = new SqlDataAdapter("SELECT * FROM [Sales-Final]", con);
             DataSet ds1 = new DataSet();
             adptr1.Fill(ds1);
             DataTable dt1 = ds1.Tables[0];
@@ -65,6 +67,58 @@ namespace Medical_store
             b++;
             textBox1.Text = b.ToString();
 
+            con.Close();
+
+            con.Open();
+            SqlDataAdapter adptr2 = new SqlDataAdapter("SELECT * FROM [Stock]", con);
+            DataSet ds2 = new DataSet();
+            adptr2.Fill(ds2);
+            DataTable dt2 = ds2.Tables[0];
+            dataGridView2.DataSource = dt2;
+
+            con.Close();
+
+        }
+        void LoadCompanyCombo()
+        {
+
+            // string Query = "select CompanyName from Company";
+
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string query = "SELECT CompanyName FROM Company";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string> myList = new List<string>();
+            while (reader.Read())
+            {
+                myList.Add(reader["CompanyName"].ToString());
+            }
+            connection.Close();
+
+            comboBox2.DataSource = myList;
+        }
+
+        void LoadItemIdCombo()
+        {
+
+            // string Query = "select CompanyName from Company";
+
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string query = "SELECT ItemId FROM Itemmaster";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string> myList = new List<string>();
+            while (reader.Read())
+            {
+                myList.Add(reader["ItemId"].ToString());
+            }
+            connection.Close();
+
+            comboBox3.DataSource = myList;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -100,64 +154,80 @@ namespace Medical_store
         private void button3_Click(object sender, EventArgs e)
         {
             //add button
-            //insert into Sales query 
-            //update into stock 
-            try
+            //insert into purchase query update into stock 
+            //try
+            //{
+            //    
+            SqlConnection con = new SqlConnection(ConnectionString);
+
+            con.Open();
+
+
+            //insert into purchase
+            SqlCommand cmd = new SqlCommand();
+            cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+
+
+            cmd.CommandText = "SELECT [Company-Name],[Item-id],[Sale-QTY],[Purchase-QTY],[Available-QTY] FROM Stock WHERE [Item-id]='" + comboBox3.Text + "'";
+            SqlDataReader dar = cmd.ExecuteReader();
+
+            DataTable dt = new DataTable();
+
+            dt.Load(dar);
+
+            dataGridView2.DataSource = dt;
+
+            int q3 = 0, q1, q2, q4, q5 = 0;
+            q1 = int.Parse(textBox5.Text);
+
+
+            q2 = Convert.ToInt32(dataGridView2.Rows[0].Cells[3].Value.ToString().Trim());
+            if (q2 <= 5)
             {
-                SqlConnection con = new SqlConnection(ConnectionString);
-
-                con.Open();
-
-
-                //insert into purchase
-                SqlCommand cmd = new SqlCommand();
-                cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-
-
-                cmd.CommandText = "SELECT [Company-Name],[Item-id],[Sale-QTY],[Purchase-QTY],[Available-QTY] FROM Stock WHERE [Item-id]='" + comboBox3.Text + "'";
-                SqlDataReader dar = cmd.ExecuteReader();
-
-                DataTable dt = new DataTable();
-
-                dt.Load(dar);
-
-                dataGridView2.DataSource = dt;
-
-                int q3 = 0, q1, q2, q4, q5 = 0;
-                q1 = int.Parse(textBox5.Text);
-
-
-                q2 = Convert.ToInt32(dataGridView2.Rows[0].Cells[2].Value.ToString().Trim());
-                if (q2 <= 5)
-                {
-                    MessageBox.Show("out of stock item");
-                }
-                q3 = q2 + q1;
-                q4 = Convert.ToInt32(dataGridView2.Rows[0].Cells[4].Value.ToString().Trim());
-                q5 = q4 - q1;
-
-
-                cmd.CommandText = "UPDATE Stock SET [Company-Name] ='" + comboBox2.Text + "', [Item-id] ='" + comboBox3.Text + "',  [Sale-QTY] ='" + q3 + "',[Available-QTY]='" + q5 + "' WHERE [Item-id] ='" + comboBox3.Text + "'";
-                cmd.ExecuteNonQuery();
-                cmd.CommandText = "INSERT INTO Sales VALUES('" + textBox1.Text + "','" + textBox10.Text + "','" + comboBox1.Text + "','" + textBox2.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox11.Text + "')";
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Record is succesfully added", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                DataSet ds = new DataSet();
-                SqlDataAdapter adptr = new SqlDataAdapter("SELECT [Bill-No],Date,[Party-Name],[Sr.No],[Company-Name],[Model-Id],Prize,Vat,Qty,[Total-vat],[Total-Prize] FROM Sales WHERE [Bill-No]='" + textBox1.Text + "'", con);                //DataSet ds = new DataSet();
-                adptr.Fill(ds);
-                DataTable dt1 = ds.Tables[0];
-                dataGridView1.DataSource = dt1;
-                dataGridView1.Rows.Add();
-
-                cmd.Connection.Close();
-
+                MessageBox.Show("out of stock item");
             }
-            catch (Exception S)
-            {
-                //MessageBox.Show(S.Message);
-            }
+            q3 = q1 + q2;
+            q4 = Convert.ToInt32(dataGridView2.Rows[0].Cells[4].Value.ToString().Trim());
+            q5 = q4 - q1;
+
+
+            cmd.CommandText = "UPDATE Stock SET [Company-Name] ='" + comboBox2.Text + "', [Item-id] ='" + comboBox3.Text + "',  [Sale-QTY] ='" + q3 + "',[Available-QTY]='" + q5 + "' WHERE [Item-id] ='" + comboBox3.Text + "'";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "INSERT INTO Sales VALUES('" + textBox1.Text + "','" + textBox10.Text + "','" + comboBox1.Text + "','" + textBox2.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox11.Text + "')";
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Record is succesfully added", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            
+            SqlDataAdapter adptr = new SqlDataAdapter("SELECT [Bill-No],Date,[Party-Name],[Sr.No],[Company-Name],[Model-Id],Prize,Vat,Qty,[Total-vat],[Total-Prize] FROM Sales WHERE [Bill-No]='" + textBox1.Text + "'", con);
+            DataSet ds = new DataSet();
+            adptr.Fill(ds);
+            DataTable dt1 = ds.Tables[0];
+            dataGridView1.DataSource = dt1;
+            //dataGridView1.Rows.Add(dt1);
+            textBox2.Text = (dt1.Rows.Count + 1).ToString()
+        ;
+            cmd.Connection.Close();
+
+            LoadDataGridStock();
+
+            //}
+            //catch (Exception S)
+            //{
+            //    MessageBox.Show(S.Message);
+            //}
+        }
+
+        private void LoadDataGridStock()
+        {
+            SqlConnection con = new SqlConnection(ConnectionString);
+            SqlDataAdapter adptr2 = new SqlDataAdapter("SELECT * FROM [Stock]", con);
+            DataSet ds2 = new DataSet();
+            adptr2.Fill(ds2);
+            DataTable dt2 = ds2.Tables[0];
+            dataGridView2.DataSource = dt2;
+
+            con.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -246,8 +316,8 @@ namespace Medical_store
                 id = id + 1;
                 if (id <= dt.Rows.Count)
                 {
-                    button12.Enabled = true;
-                    button11.Enabled = true;
+                    //button12.Enabled = true;
+                    //button11.Enabled = true;
 
                     textBox10.Text = (dt.Rows[id - 1][1]).ToString();
                     comboBox1.Text = (dt.Rows[id - 1][2]).ToString();
@@ -266,7 +336,7 @@ namespace Medical_store
                 }
                 else
                 {
-                    button12.Enabled = false;
+                    //button12.Enabled = false;
                 }
             }
             catch (Exception s)
@@ -301,8 +371,8 @@ namespace Medical_store
                 id = id - 1;
                 if (id <= dt.Rows.Count)
                 {
-                    button12.Enabled = true;
-                    button11.Enabled = true;
+                    //button12.Enabled = true;
+                    //button11.Enabled = true;
 
                     textBox10.Text = (dt.Rows[id - 1][1]).ToString();
                     comboBox1.Text = (dt.Rows[id - 1][2]).ToString();
@@ -318,7 +388,7 @@ namespace Medical_store
                 }
                 else
                 {
-                    button11.Enabled = false;
+                   // button11.Enabled = false;
                 }
             }
             catch (Exception s)
@@ -381,7 +451,7 @@ namespace Medical_store
             }
             catch (Exception S)
             {
-                //MessageBox.Show(S.Message);
+                MessageBox.Show(S.Message);
             }
         }
 
@@ -522,6 +592,78 @@ namespace Medical_store
             catch (Exception s)
             {
                 MessageBox.Show(s.Message);
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string name = comboBox2.SelectedItem.ToString();
+            string query = "SELECT * FROM Itemmaster";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string> myList = new List<string>();
+            string price = "";
+            while (reader.Read())
+            {
+                if (reader["CompanyName"].ToString() == name)
+                    myList.Add(reader["ItemId"].ToString());
+
+            }
+
+
+            comboBox3.DataSource = myList;
+
+            reader.Close();
+            connection.Close();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string name = comboBox3.SelectedItem.ToString();
+            string query = "SELECT * FROM Itemmaster";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string> myList = new List<string>();
+            string price = "";
+            while (reader.Read())
+            {
+                if (reader["ItemId"].ToString() == name)
+                    price = reader["Price"].ToString();
+
+            }
+
+
+            textBox3.Text = price;
+
+            reader.Close();
+            connection.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int i = e.RowIndex;
+
+                DataGridViewRow row = dataGridView1.Rows[i];
+                textBox2.Text = row.Cells[0].Value.ToString();
+                comboBox2.Text = row.Cells[1].Value.ToString();
+                comboBox3.Text = row.Cells[2].Value.ToString();
+                textBox3.Text = row.Cells[3].Value.ToString();
+                textBox4.Text = row.Cells[4].Value.ToString();
+                textBox5.Text = row.Cells[5].Value.ToString();
+                textBox6.Text = row.Cells[6].Value.ToString();
+                textBox11.Text = row.Cells[7].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

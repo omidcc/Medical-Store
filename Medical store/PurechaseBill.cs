@@ -68,6 +68,18 @@ namespace Medical_store
             b++;
             textBox1.Text = b.ToString();
 
+            con.Close();
+
+            con.Open();
+            SqlDataAdapter adptr2 = new SqlDataAdapter("SELECT * FROM [Stock]", con);
+            DataSet ds2 = new DataSet();
+            adptr2.Fill(ds2);
+            DataTable dt2 = ds2.Tables[0];
+            dataGridView2.DataSource = dt2;
+          
+            con.Close();
+           
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -109,9 +121,10 @@ namespace Medical_store
         {
             //add button
             //insert into purchase query update into stock 
-            try
-            {
-                SqlConnection con = new SqlConnection(ConnectionString);
+            //try
+            //{
+            //    
+            SqlConnection con = new SqlConnection(ConnectionString);
 
                 con.Open();
                 
@@ -148,19 +161,35 @@ namespace Medical_store
                 MessageBox.Show("Record is succesfully added", "Congratulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 DataSet ds = new DataSet();
-                SqlDataAdapter adptr = new SqlDataAdapter("SELECT [Bill-No],Date,[Party-Name],[Sr_No],[Company-Name],[Model-Id],Prize,Vat,Qty,[Total-vat],[Total-Prize] FROM Purchase WHERE [Bill-No]='" + textBox1.Text + "'", con);                //DataSet ds = new DataSet();
+                SqlDataAdapter adptr = new SqlDataAdapter("SELECT [Bill-No],Date,[Party-Name],[Sr_No],[Company-Name],[Model-Id],Prize,Vat,Qty,[Total-vat],[Total-Prize] FROM Purchase WHERE [Bill-No]='" + textBox1.Text + "'", con);                
+            //DataSet ds = new DataSet();
                 adptr.Fill(ds);
                 DataTable dt1 = ds.Tables[0];
                 dataGridView1.DataSource = dt1;
-                dataGridView1.Rows.Add();
-         
+                //dataGridView1.Rows.Add(dt1);
+                textBox2.Text=(dt1.Rows.Count+1).ToString()
+            ;
                 cmd.Connection.Close();
-               
-            }
-            catch (Exception S)
-            {
-                MessageBox.Show(S.Message);
-            }
+
+            LoadDataGridStock();
+
+            //}
+            //catch (Exception S)
+            //{
+            //    MessageBox.Show(S.Message);
+            //}
+        }
+
+        private void LoadDataGridStock()
+        {
+            SqlConnection con=new SqlConnection(ConnectionString);
+            SqlDataAdapter adptr2 = new SqlDataAdapter("SELECT * FROM [Stock]", con);
+            DataSet ds2 = new DataSet();
+            adptr2.Fill(ds2);
+            DataTable dt2 = ds2.Tables[0];
+            dataGridView2.DataSource = dt2;
+
+            con.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -256,8 +285,8 @@ namespace Medical_store
                 id = id + 1;
                 if (id <= dt.Rows.Count)
                 {
-                    button12.Enabled = true;
-                    button11.Enabled = true;
+                    //button12.Enabled = true;
+                    //button11.Enabled = true;
 
                     textBox10.Text = (dt.Rows[id - 1][1]).ToString();
                     comboBox1.Text = (dt.Rows[id - 1][2]).ToString();
@@ -276,7 +305,7 @@ namespace Medical_store
                 }
                 else
                 {
-                    button12.Enabled = false;
+                    //button12.Enabled = false;
                 }
             }
             catch (Exception s)
@@ -311,8 +340,8 @@ namespace Medical_store
                 id = id - 1;
                 if (id <= dt.Rows.Count)
                 {
-                    button12.Enabled = true;
-                    button11.Enabled = true;
+                   // button12.Enabled = true;
+                   // button11.Enabled = true;
 
                     textBox10.Text = (dt.Rows[id - 1][1]).ToString();
                     comboBox1.Text = (dt.Rows[id - 1][2]).ToString();
@@ -331,7 +360,7 @@ namespace Medical_store
                 }
                 else
                 {
-                    button11.Enabled = false;
+                   // button11.Enabled = false;
                 }
             }
             catch (Exception s)
@@ -393,7 +422,7 @@ namespace Medical_store
             }
             catch (Exception S)
             {
-                //MessageBox.Show(S.Message);
+                MessageBox.Show(S.Message);
             }
         }
 
@@ -602,6 +631,78 @@ namespace Medical_store
             connection.Close();
 
             comboBox3.DataSource = myList;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string name = comboBox2.SelectedItem.ToString();
+            string query = "SELECT * FROM Itemmaster";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string> myList = new List<string>();
+            string price = "";
+            while (reader.Read())
+            {
+                if(reader["CompanyName"].ToString()==name)
+                myList.Add(reader["ItemId"].ToString());
+                
+            }
+            
+
+            comboBox3.DataSource = myList;
+            
+                reader.Close();
+                connection.Close();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            string name = comboBox3.SelectedItem.ToString();
+            string query = "SELECT * FROM Itemmaster";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            List<string> myList = new List<string>();
+            string price = "";
+            while (reader.Read())
+            {
+                if (reader["ItemId"].ToString() == name)
+                    price=reader["Price"].ToString();
+
+            }
+
+
+            textBox3.Text = price;
+
+            reader.Close();
+            connection.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int i = e.RowIndex;
+
+                DataGridViewRow row = dataGridView1.Rows[i];
+                textBox2.Text = row.Cells[0].Value.ToString();
+                comboBox2.Text = row.Cells[1].Value.ToString();
+                comboBox3.Text = row.Cells[2].Value.ToString();
+                textBox3.Text = row.Cells[3].Value.ToString();
+                textBox4.Text = row.Cells[4].Value.ToString();
+                textBox5.Text = row.Cells[5].Value.ToString();
+                textBox6.Text = row.Cells[6].Value.ToString();
+                textBox11.Text = row.Cells[7].Value.ToString();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

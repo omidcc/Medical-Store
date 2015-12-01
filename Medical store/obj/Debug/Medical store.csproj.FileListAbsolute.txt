@@ -65,9 +65,8 @@ G:\Medical store project\Medical store\obj\Debug\Medical store.csproj.GenerateRe
 G:\Medical store project\Medical store\obj\Debug\Medical store.exe
 G:\Medical store project\Medical store\obj\Debug\Medical store.pdb
 G:\Medical store project\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache
-F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.exe.config
 F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.exe
-F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.pdb
+F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.exe.config
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Calander.resources
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.Company.resources
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical_store.ContactUs.resources
@@ -88,3 +87,4 @@ F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.csproj.Gene
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.exe
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.pdb
 F:\medical store\Medical-Store\Medical store\obj\Debug\Medical store.csprojResolveAssemblyReference.cache
+F:\medical store\Medical-Store\Medical store\bin\Debug\Medical store.pdb

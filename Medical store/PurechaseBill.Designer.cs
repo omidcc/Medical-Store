@@ -30,23 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button11 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.purchaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicalDataSet5 = new Medical_store.MedicalDataSet5();
             this.label7 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicalDataSet1 = new Medical_store.MedicalDataSet1();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -124,11 +118,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(61, 534);
             this.groupBox2.Name = "groupBox2";
@@ -136,17 +127,6 @@
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Button";
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(542, 21);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(66, 26);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "&Delete";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -159,21 +139,10 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(452, 21);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(76, 26);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "&Modify";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(373, 21);
+            this.button6.Location = new System.Drawing.Point(537, 21);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(64, 26);
             this.button6.TabIndex = 18;
@@ -181,27 +150,13 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(11, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(76, 26);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "&New";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.textBox11);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.button1);
@@ -225,17 +180,6 @@
             this.groupBox4.TabIndex = 44;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Item Info";
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(282, 87);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 24;
-            this.button11.Text = "<";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // textBox11
             // 
@@ -263,20 +207,9 @@
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(583, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 15);
+            this.label7.Size = new System.Drawing.Size(55, 15);
             this.label7.TabIndex = 17;
             this.label7.Text = "Total Vat";
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(376, 88);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 23;
-            this.button12.Text = ">";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button10
             // 
@@ -307,17 +240,6 @@
             // 
             this.medicalDataSet1.DataSetName = "MedicalDataSet1";
             this.medicalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(194, 86);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(76, 26);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "&Delete";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -366,6 +288,7 @@
             this.comboBox3.Size = new System.Drawing.Size(65, 21);
             this.comboBox3.TabIndex = 6;
             this.comboBox3.ValueMember = "Item-Id";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -381,6 +304,7 @@
             this.comboBox2.Size = new System.Drawing.Size(91, 21);
             this.comboBox2.TabIndex = 5;
             this.comboBox2.ValueMember = "Company-Name";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // itemmasterBindingSource
             // 
@@ -436,7 +360,7 @@
             this.label18.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(586, 72);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 15);
+            this.label18.Size = new System.Drawing.Size(65, 15);
             this.label18.TabIndex = 6;
             this.label18.Text = "Total prize";
             // 
@@ -446,7 +370,7 @@
             this.label17.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(331, 24);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(26, 15);
+            this.label17.Size = new System.Drawing.Size(25, 15);
             this.label17.TabIndex = 5;
             this.label17.Text = "Vat";
             // 
@@ -525,7 +449,7 @@
             this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(14, 50);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(151, 23);
+            this.label10.Size = new System.Drawing.Size(150, 23);
             this.label10.TabIndex = 31;
             this.label10.Text = "Total Net Amount";
             // 
@@ -535,7 +459,7 @@
             this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(13, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 23);
+            this.label9.Size = new System.Drawing.Size(149, 23);
             this.label9.TabIndex = 30;
             this.label9.Text = "Total Vat Amount";
             // 
@@ -545,7 +469,7 @@
             this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(17, 80);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 23);
+            this.label8.Size = new System.Drawing.Size(118, 23);
             this.label8.TabIndex = 29;
             this.label8.Text = "Total Amount";
             // 
@@ -707,6 +631,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(668, 130);
             this.dataGridView1.TabIndex = 46;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // srNoDataGridViewTextBoxColumn
             // 
@@ -881,19 +806,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
